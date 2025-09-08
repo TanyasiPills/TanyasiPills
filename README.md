@@ -1,16 +1,36 @@
-## Hi there 👋
 
-<!--
-**TanyasiPills/TanyasiPills** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+```c++
+struct Mayuto {
+    // Basic info
+    std::string name = "Gáspár Mátyás";
+    int age = 19;
+    
+    // Job info
+    JobTitle job = JobTitle::SoftwareEngineer;
+    std::string workplace = "Emerson Process Management";
 
-Here are some ideas to get you started:
+    // Skills
+    std::vector<Skill> skills = {
+        {"C/C++", Level::Expert},
+        {"JavaScript", Level::Expert},
+        {"Java", Level::Expert},
+        {"C#", Level:ntermediate},
+        {"Python", Level::Intermediate}
+    };
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    // Projects
+    std::array<Project, 3> projects = {{
+        {"ColorSync", "Social & Drawing Platform for Artists", Status::Completed},
+        {"IgnisUI", "Cross-platform UI Library in C/C++", Status::Active},
+        {"Gup", "Smart Desktop Assistant", Status::Refactoring} // actively rewriting
+    }};
+
+    // Preferences
+    bool remoteFriendly = true;
+    std::vector<std::string> hobbies = {"Robotics", "Music", "Open Source"};
+};
+```
+<p style="display:flex; gap:2%;">
+  <img src="https://github-readme-stats.vercel.app/api?username=TanyasiPills&show_icons=true&theme=radical" style="width:68%; height:auto;" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TanyasiPills&theme=radical" style="width:30%; height:auto;" />
+</p>
