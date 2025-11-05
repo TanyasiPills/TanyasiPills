@@ -14,7 +14,7 @@ struct Mayuto {
         {"C/C++", Level::Expert},
         {"JavaScript", Level::Expert},
         {"Java", Level::Expert},
-        {"C#", Level:ntermediate},
+        {"C#", Level:Intermediate},
         {"Python", Level::Intermediate}
     };
 
