@@ -1,9 +1,8 @@
-
 ```c++
 struct Mayuto {
     // Basic info
     std::string name = "Gáspár Mátyás";
-    int age = 19;
+    int age = 20;
     
     // Job info
     JobTitle job = JobTitle::SoftwareEngineer;
@@ -15,6 +14,7 @@ struct Mayuto {
         {"JavaScript", Level::Expert},
         {"Java", Level::Expert},
         {"C#", Level:Intermediate},
+        {"Rust", Level:Intermediate},
         {"Python", Level::Intermediate}
     };
 
@@ -25,9 +25,8 @@ struct Mayuto {
         {"Gup", "Smart Desktop Assistant", Status::Refactoring} // actively rewriting
     }};
 
-    // Preferences
-    bool remoteFriendly = true;
-    std::vector<std::string> hobbies = {"Robotics", "Music", "Open Source"};
+    // Other
+    std::vector<std::string> hobbies = {"Robotics", "Music", "Low level coding"};
 };
 ```
 <p style="display:flex; gap:2%;">
