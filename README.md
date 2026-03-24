@@ -19,11 +19,11 @@ struct Mayuto {
     };
 
     // Projects
-    std::array<Project, 3> projects = {{
+    std::array<Project, 3> projects = {
         {"ColorSync", "Social & Drawing Platform for Artists", Status::Completed},
         {"IgnisUI", "Cross-platform UI Library in C/C++", Status::Active},
         {"Gup", "Smart Desktop Assistant", Status::Refactoring} // actively rewriting
-    }};
+    };
 
     // Other
     std::vector<std::string> hobbies = {"Robotics", "Music", "Low level coding"};
