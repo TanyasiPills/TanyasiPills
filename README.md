@@ -29,7 +29,3 @@ struct Mayuto {
     std::vector<std::string> hobbies = {"Robotics", "Music", "Low level coding"};
 };
 ```
-<p style="display:flex; gap:2%;">
-  <img src="https://github-readme-stats.vercel.app/api?username=TanyasiPills&show_icons=true&theme=radical" style="width:68%; height:auto;" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TanyasiPills&theme=radical" style="width:30%; height:auto;" />
-</p>
