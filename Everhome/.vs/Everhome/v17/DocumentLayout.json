@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Everhome\\Everhome\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|C:\\Everhome\\Everhome\\assets\\scripts\\audiorecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiorecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AudioPlayer.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioPlayer.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioPlayer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T11:33:48.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AudioRecord.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioRecord.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioRecord.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioRecord.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioRecord.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T10:06:06.006Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
