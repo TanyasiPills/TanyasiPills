@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Everhome\\Everhome\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|C:\\Everhome\\Everhome\\assets\\scripts\\audiorecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiorecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|C:\\Everhome\\Everhome\\assets\\scripts\\networking\\networker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\networking\\networker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,28 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AudioPlayer.cs",
-              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioPlayer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioPlayer.cs",
-              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioPlayer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AudioPlayer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAADwv88AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T11:33:48.412Z",
+              "WhenOpened": "2026-03-31T17:18:31.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AudioRecord.cs",
-              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioRecord.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioRecord.cs",
-              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\AudioRecord.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AudioRecord.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Title": "Networker.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Networking\\Networker.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Networking\\Networker.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Networking\\Networker.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Networking\\Networker.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAF8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T10:06:06.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-31T16:56:33.624Z"
             }
           ]
         }

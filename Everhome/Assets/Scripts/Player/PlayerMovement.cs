@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using static UnityEngine.UI.Image;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,11 +10,17 @@ public class PlayerMovement : MonoBehaviour
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction jumpAction;
+    private InputAction leftArmAction;
+    private InputAction rightArmAction;
 
     [Header("Physics")]
     private Rigidbody rb;
     public Rigidbody leftLeg;
     public Rigidbody rightLeg;
+    public Rigidbody leftArm;
+    public Rigidbody rightArm;
+    public GameObject leftHeld;
+    public GameObject rightHeld;
     private Vector3 moving;
     private Vector3 velocity;
     private Vector3 slopeMovDir;
@@ -44,8 +52,12 @@ public class PlayerMovement : MonoBehaviour
     [Header(header: "Layer")]
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private int playerLayer;
+    [SerializeField] public LayerMask layerMask;
 
     float moveProgress = 0f;
+
+    bool canPickupLeft = false;
+    bool canPickupRight = false;
 
     public void Start()
     {
@@ -54,20 +66,22 @@ public class PlayerMovement : MonoBehaviour
         transform.gameObject.layer = playerLayer;
         LayerChild(transform, playerLayer);
 
-        //playerCamera = GameObject.Find("cameraHolder").transform;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         jumpAction = InputSystem.actions.FindAction("Jump");
         jumpAction.performed += OnJump;
 
-        jumpAction.actionMap.Enable();
-
         moveAction = InputSystem.actions.FindAction("Move");
         lookAction = InputSystem.actions.FindAction("Look");
 
+        leftArmAction = InputSystem.actions.FindAction("Lefthand");
+        rightArmAction = InputSystem.actions.FindAction("Righthand");
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        InputSystem.actions.FindActionMap("Player").Enable();
     }
 
     private void OnDestroy()
@@ -119,13 +133,15 @@ public class PlayerMovement : MonoBehaviour
         moving = transform.forward * movedir.y + transform.right * movedir.x;
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundMask);
 
-        if(movedir.magnitude > 0)
+        ArmManagement();
+
+        if (movedir.magnitude > 0)
         {
             moveProgress += Time.fixedDeltaTime;
             float sin = Mathf.Sin(moveProgress * sinSpeed);
-            transform.rotation = Quaternion.Euler(0, lookX, sin * 10);
-            rightLeg.AddTorque(transform.right * 60 * sin);
-            leftLeg.AddTorque(transform.right * 60 * -sin);
+            transform.rotation = Quaternion.Euler(0, lookX, sin * 6);
+            rightLeg.AddTorque(transform.right * 100 * sin);
+            leftLeg.AddTorque(transform.right * 100 * -sin);
         } else{
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
             moveProgress = 0;
@@ -172,6 +188,58 @@ public class PlayerMovement : MonoBehaviour
         {
             child.gameObject.layer = layer;
             LayerChild(child, layer);
+        }
+    }
+
+    private void ArmManagement()
+    {
+        float left = leftArmAction.ReadValue<float>();
+        float right = rightArmAction.ReadValue<float>();
+
+        canPickupLeft = left > 0;
+        canPickupRight = right > 0;
+
+        float leftDegree = Vector3.Dot(transform.forward, leftArm.transform.forward);
+        float rightDegree = Vector3.Dot(transform.forward, rightArm.transform.forward);
+
+        leftArm.AddTorque(leftArm.transform.right * 80 * left * leftDegree);
+        rightArm.AddTorque(rightArm.transform.right * 80 * right * rightDegree);
+
+        if(leftHeld != null && !canPickupLeft)
+        {
+            Destroy(leftHeld.GetComponent<ConfigurableJoint>());
+            leftHeld = null;
+        }
+
+        if (rightHeld != null && !canPickupRight)
+        {
+            Destroy(rightHeld.GetComponent<ConfigurableJoint>());
+            rightHeld = null;
+        }
+    }
+
+    public void Pickup(GameObject other, GameObject hand, Vector3 closest)
+    {
+        if((hand.tag == "left" && canPickupLeft && leftHeld == null) || (hand.tag == "right") && canPickupRight && rightHeld == null)
+        {
+            ConfigurableJoint joint = other.gameObject.AddComponent<ConfigurableJoint>();
+            joint.connectedBody = hand.GetComponent<Rigidbody>();
+
+            joint.anchor = closest;
+            joint.xMotion = joint.yMotion = joint.zMotion = ConfigurableJointMotion.Locked;
+            joint.angularXMotion = joint.angularYMotion = ConfigurableJointMotion.Locked;
+
+            JointDrive drive = new JointDrive
+            {
+                positionSpring = 2000f,
+                positionDamper = 200f,
+                maximumForce = Mathf.Infinity
+            };
+
+            joint.xDrive = joint.yDrive = joint.zDrive = drive;
+
+            if (hand.tag == "left") leftHeld = other;
+            else rightHeld = other;
         }
     }
 }
