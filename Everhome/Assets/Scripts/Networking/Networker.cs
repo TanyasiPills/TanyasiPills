@@ -4,8 +4,6 @@ using Steamworks;
 using Steamworks.Data;
 using TMPro;
 using Unity.Netcode;
-using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class Networker : MonoBehaviour
 {
@@ -15,14 +13,14 @@ public class Networker : MonoBehaviour
 
     private FacepunchTransport transport;
 
-    public TMP_Text log;
-
     public GameObject playerPrefab;
 
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+        }
         else
         {
             Destroy(gameObject);
@@ -70,18 +68,22 @@ public class Networker : MonoBehaviour
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
 
-        if (NetworkManager.Singleton.StartHost()) log.text = "started server";
+        NetworkManager.Singleton.StartHost();
 
         lobby = await SteamMatchmaking.CreateLobbyAsync(10);
     }
 
     public void Disconnect()
     {
-        lobby?.Leave();
+        if (lobby.HasValue)
+            lobby.Value.Leave();
 
         if (NetworkManager.Singleton == null) return;
+        else if (NetworkManager.Singleton.IsListening)
+            NetworkManager.Singleton.Shutdown();
 
-        NetworkManager.Singleton.Shutdown();
+        if (SteamClient.IsValid)
+            SteamClient.Shutdown();
     }
 
     private void OnApplicationQuit()
@@ -95,13 +97,14 @@ public class Networker : MonoBehaviour
 
         transport.targetSteamId = id;
 
-        if (NetworkManager.Singleton.StartClient()) log.text = "started client";
+        NetworkManager.Singleton.StartClient();
     }
 
     private void SpawnForClient(ulong clientId)
     {
-        GameObject obj = Instantiate(playerPrefab, new Vector3(0, 4, 0), Quaternion.identity);
-        obj.GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
+        GameObject obj = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        NetworkObject nObj = obj.GetComponent<NetworkObject>();
+        nObj.SpawnWithOwnership(clientId);
     }
 
 
@@ -123,7 +126,10 @@ public class Networker : MonoBehaviour
         }
     }
 
-
+    public void GetSteamOverlay()
+    {
+        SteamFriends.OpenOverlay("friends");
+    }
 
 
 

@@ -3,7 +3,8 @@ using Concentus.Structs;
 using UnityEngine;
 using NAudio.Wave;
 using System;
-using UnityEngine.InputSystem.LowLevel;
+using Unity.Netcode;
+using System.Collections.Concurrent;
 
 public class AudioRecord : MonoBehaviour
 {
@@ -14,20 +15,25 @@ public class AudioRecord : MonoBehaviour
     static public int freq = 48000;
     static public int chunkSize;
 
-    public Transform speaker;
-    private AudioPlayer player;
+    public RPCController rpc;
+
+    public NetworkObject player;
+    private ConcurrentQueue<(byte[], int)> sendQueue = new();
+    private ulong localId;
 
     //[Range(0, 0.5f)]
     public float threshold = 0.1f; 
 
     void Start()
     {
+        player = null;
+
         encoder = new OpusEncoder(freq, 1, OpusApplication.OPUS_APPLICATION_VOIP);
         decoder = new OpusDecoder(freq, 1);
 
         chunkSize = freq / 100;
 
-        player = speaker.GetComponent<AudioPlayer>();
+        rpc = GameObject.FindGameObjectWithTag("RPC").GetComponent<RPCController>();
 
         waveIn = new WaveInEvent();
         waveIn.DeviceNumber = 0;
@@ -60,8 +66,8 @@ public class AudioRecord : MonoBehaviour
             Span<byte> outSpan = compressed.AsSpan();
 
             int compressedLength = encoder.Encode(pcm, chunkSize, outSpan, compressed.Length);
-            player.PushSamples(compressed, compressedLength);
-  
+
+            sendQueue.Enqueue((compressed, compressedLength));
         }
         catch (Exception ex)
         {
@@ -84,5 +90,16 @@ public class AudioRecord : MonoBehaviour
         double rms = Math.Sqrt(energy / data.Length);
 
         return rms > threshold;
+    }
+
+    private void Update()
+    {
+        while(sendQueue.TryDequeue(out var data))
+        {
+            if (player != null)
+            {
+                rpc.SendVoiceToServerRpc(data.Item1, data.Item2, player);
+            }
+        }
     }
 }

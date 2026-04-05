@@ -6,6 +6,10 @@ TagManager:
   tags:
   - right
   - left
+  - Manager
+  - RPC
+  - Recorder
+  - Godcam
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - Water
   - UI
   - moveable
-  - 
+  - wall
   - 
   - 
   - 

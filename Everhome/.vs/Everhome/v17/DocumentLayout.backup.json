@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Everhome\\Everhome\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\spin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|C:\\Everhome\\Everhome\\assets\\scripts\\networking\\networker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\player\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|c:\\everhome\\everhome\\assets\\scripts\\networking\\networker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A020914-01BC-3DB2-BF7D-1BCE05DF9D03}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\networking\\networker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +34,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAADwv88AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Hand.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\Hand.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Hand.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\Hand.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Hand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T17:18:31.793Z",
+              "WhenOpened": "2026-04-05T17:29:19.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAwwE8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T15:20:52.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Networker.cs",
               "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Networking\\Networker.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Networking\\Networker.cs",
               "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\Networking\\Networker.cs",
               "RelativeToolTip": "Assets\\Scripts\\Networking\\Networker.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAF8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T16:56:33.624Z"
+              "WhenOpened": "2026-04-05T15:12:25.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "spin.cs",
+              "DocumentMoniker": "C:\\Everhome\\Everhome\\Assets\\Scripts\\spin.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\spin.cs",
+              "ToolTip": "C:\\Everhome\\Everhome\\Assets\\Scripts\\spin.cs",
+              "RelativeToolTip": "Assets\\Scripts\\spin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T21:03:49.485Z",
+              "EditorCaption": ""
             }
           ]
         }

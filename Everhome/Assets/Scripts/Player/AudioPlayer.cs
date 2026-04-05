@@ -1,19 +1,17 @@
 using System.Collections.Generic;
 using System.Text;
+using Unity.Netcode;
 using UnityEngine;
 
-public class AudioPlayer : MonoBehaviour
+public class AP
 {
-    public AudioSource source;
-    public AudioClip clip;
     float[] decodeBuffer = new float[AudioRecord.chunkSize];
     float[] oriboriBuffer = new float[AudioRecord.freq];
 
     int readpos = 0;
     int writepos = 0;
 
-
-    private void OnAudioFilterRead(float[] data, int channels)
+    public void PopSamples(float[] data, int channels)
     {
         int localRead = readpos;
         int localWrite = writepos;
@@ -52,6 +50,27 @@ public class AudioPlayer : MonoBehaviour
 
             oriboriBuffer[writepos] = decodeBuffer[i];
             writepos = next;
+        }
+    }
+}
+
+public class AudioPlayer : MonoBehaviour
+{
+    public Dictionary<ulong, AP> APS = new Dictionary<ulong, AP>();
+
+
+    public void AddPlayer(NetworkObjectReference refy)
+    {
+        if (refy.TryGet(out NetworkObject netObj))
+        {
+            APS[netObj.OwnerClientId] = new AP();
+        }
+    }
+
+    public void PushSample(NetworkObjectReference refy, byte[] newSamples, int length)
+    {
+        if (refy.TryGet(out NetworkObject netObj)) {
+            APS[netObj.OwnerClientId].PushSamples(newSamples, length);
         }
     }
 }
