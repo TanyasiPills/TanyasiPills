@@ -1076,11 +1076,7 @@ MonoBehaviour:
   jumpMult: 0.2
   drag: 6
   airDrag: 3
-  lookSensitivity: 12
-  lookSmoothSpeed: 0
   sinSpeed: 14
-  lookX: 0
-  lookY: 0
   groundCheck: {fileID: 8650629280169219205}
   torso: {fileID: 1882664098906230223}
   LTP: {fileID: 2484560724233718032}

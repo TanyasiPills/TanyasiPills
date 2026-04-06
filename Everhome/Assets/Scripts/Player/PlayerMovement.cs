@@ -12,7 +12,6 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Input System")]
 
     private InputAction moveAction;
-    private InputAction lookAction;
     private InputAction jumpAction;
     private InputAction leftArmAction;
     private InputAction rightArmAction;
@@ -90,7 +89,6 @@ public class PlayerMovement : NetworkBehaviour
         jumpAction.performed += OnJump;
 
         moveAction = InputSystem.actions.FindAction("Move");
-        lookAction = InputSystem.actions.FindAction("Look");
 
         leftArmAction = InputSystem.actions.FindAction("Lefthand");
         rightArmAction = InputSystem.actions.FindAction("Righthand");
@@ -242,14 +240,21 @@ public class PlayerMovement : NetworkBehaviour
 
         if(leftHeld != null && !canPickupLeft)
         {
+            Rigidbody rbOther = leftHeld.GetComponent<Rigidbody>();
             Destroy(leftHeld.GetComponent<ConfigurableJoint>());
             leftHeld = null;
+
+            rbOther.linearVelocity = leftArm.linearVelocity;
+            rbOther.angularVelocity = leftArm.angularVelocity;
         }
 
         if (rightHeld != null && !canPickupRight)
         {
+            Rigidbody rbOther = rightHeld.GetComponent<Rigidbody>();
             Destroy(rightHeld.GetComponent<ConfigurableJoint>());
             rightHeld = null;
+            rbOther.linearVelocity = rightArm.linearVelocity;
+            rbOther.angularVelocity = rightArm.angularVelocity;
         }
     }
 
@@ -266,7 +271,7 @@ public class PlayerMovement : NetworkBehaviour
 
             joint.anchor = closest;
             joint.xMotion = joint.yMotion = joint.zMotion = ConfigurableJointMotion.Locked;
-            joint.angularXMotion = joint.angularYMotion = ConfigurableJointMotion.Locked;
+            //joint.angularXMotion = joint.angularYMotion = ConfigurableJointMotion.Locked;
 
             JointDrive drive = new JointDrive
             {
